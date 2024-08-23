@@ -9,12 +9,10 @@
 <body>
     <Main>
         <div class="mainBox">
-            <label> Search for Pokemon Name or ID:</label>
-            <input type="text">
-            <button>Search</button>
-            <article class="card_container">
-                    <div class="poke_image" id="poke_image"></div>
-            </article>
+            <label for="id_nameInput"> Search for Pokemon Name or ID:</label>
+            <input type="text" id="name_or_id_input">
+            <button class="btn" id="btn">Search</button>
+            <article class="pokemon_container" id="pokemon_container"></article>
             <div class="poke_stats">
                 <ul class="Stats_box">
                     <li>HP<span class="bar"><span class="stats HP"></span></span></li>
@@ -35,3 +33,13 @@
     <script src="main.js"></script>
 </body>
 </html>
+
+
+<!-- span name
+        img pokemon
+    span type pokemon
+    -------------------
+    stats
+    ----------------
+    Evolution chart
+-->

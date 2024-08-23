@@ -1,5 +1,7 @@
-const API_URL = 'https://pokeapi-proxy.freecodecamp.rocks/api/pokemon?limit=5';
-
+const API_URL = 'https://pokeapi-proxy.freecodecamp.rocks/api/pokemon';
+const SearchInput = document.getElementById("name_or_id_input");
+const btn = document.getElementById("btn");
+const pokemon_container = document.getElementById("pokemon_container");
 
 fetch(API_URL)
 .then(Response => Response.json())
@@ -7,18 +9,43 @@ fetch(API_URL)
 .catch(error => console.log(error))
 
 const ShowData = (data) => {
+    // click trigger, find pokemon using name or id
+    btn.addEventListener("click", () =>{
+        pokemon_container.innerHTML = '';
+        for (let i = 0; i < data.results.length; i++) {
+            if (data.results[i].name === SearchInput.value.toLowerCase()
+            || data.results[i].id === Number(SearchInput.value)){  
+                let PokemonName = document.createRange().createContextualFragment(`
+                    <span>name: ${data.results[i].name}</span>
+                `);
+                let divContainer = document.createElement('div');
+                divContainer.appendChild(PokemonName);
+                pokemon_container.appendChild(divContainer);
+
+            } else{
+                alert(`Pokemon id(${data.results[i].id}) Not found`);
+            }
+        } 
+        SearchInput.value = '';
+    })
+
+    /*
+        TODO: Change for loop, instead use just data.results.name or id,
+        TODO: or look for a another way to solve bugs 
+    */
+
+
+
+    // <div class="poke_image" id="poke_image"></div>
+
+    // myElement.id = "my-id"; 
+    // myElement.classList.add("my-class"); 
+
+
     // create a node that append name and id to poke_image div
-    const pokeName = document.createRange().createContextualFragment(`
-        <span>id: ${data.results[68].id}</span>
-        <span>name: ${data.results[69].name}</span>
-    `);
-
-    const image_pokemon = document.getElementById("poke_image");
-    image_pokemon.append(pokeName);
-
-    // console.log each pokemon name 
     // for (let i = 0; i < 5; i++) {
     //     console.log(data.results[i].name);
+    //     spanPokeName.innerHTML += `${data.results[i].name}`;
     // }
 
 //     same but using forEach
@@ -26,3 +53,10 @@ const ShowData = (data) => {
 //         console.log(pokemon.name);
 //     });
 }
+
+
+
+
+
+
+
