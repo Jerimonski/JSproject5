@@ -8,16 +8,25 @@ btn.addEventListener("click", () => {
     fetch(API_URL)
     .then(Response => Response.json())
     .then(data => {ShowData(data)})
-    .catch(error => console.log(error))
+    .catch(error => alert(error))
 })
 const ShowData = (data) => {
     pokemon_container.innerHTML = '';
+    console.log(data.types.type); 
     let PokemonName = document.createRange().createContextualFragment(`
+        <figure>
         <img src="${data.sprites.front_default}">
+        <figcaption>${data.name} #${data.id}</figcaption>
+        </figure>
+        <span>${data.types.map(obj => obj.type.name).join('')}</span>
+        <span></span>
     `);
-    let divContainer = document.createElement('div');
-    divContainer.appendChild(PokemonName);
-    pokemon_container.appendChild(divContainer);
+    //use this to create a span for each type and add classes blablabla
+// Set types
+// types.innerHTML = data.types
+// .map(obj => `<span class="type ${obj.type.name}">${obj.type.name}</span>`)
+// .join('');
+    pokemon_container.appendChild(PokemonName);
 }
 
     /*
