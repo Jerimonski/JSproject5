@@ -139,3 +139,7 @@ body::before {
         width: 90%;
     }
 }
+
+.bug{
+    background-color: antiquewhite;
+}

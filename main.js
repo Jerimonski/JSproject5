@@ -1,6 +1,7 @@
 const SearchInput = document.getElementById("name_or_id_input");
 const btn = document.getElementById("btn");
 const pokemon_container = document.getElementById("pokemon_container");
+const hp_bar = document.getElementById("hp");
 
 
 btn.addEventListener("click", () => {
@@ -12,20 +13,24 @@ btn.addEventListener("click", () => {
 })
 const ShowData = (data) => {
     pokemon_container.innerHTML = '';
+
     console.log(data.types.type); 
     let PokemonName = document.createRange().createContextualFragment(`
         <figure>
         <img src="${data.sprites.front_default}">
         <figcaption>${data.name} #${data.id}</figcaption>
         </figure>
-        <span>${data.types.map(obj => obj.type.name).join('')}</span>
-        <span></span>
+        ${data.types.map(obj => `<span class="${obj.type.name}">${obj.type.name}</span>`).join(' ')}
     `);
-    //use this to create a span for each type and add classes blablabla
+    let PokemonStats = document.createRange().createContextualFragment(`
+        ${data.stats.map(obj => `<span class="stats ${obj.base_stat}">${obj.base_stat}</span>`).join(' ')}
+    `);
+    //use this to create a span for each type and add classes 
 // Set types
 // types.innerHTML = data.types
 // .map(obj => `<span class="type ${obj.type.name}">${obj.type.name}</span>`)
 // .join('');
+    hp_bar.appendChild(PokemonStats);
     pokemon_container.appendChild(PokemonName);
 }
 
