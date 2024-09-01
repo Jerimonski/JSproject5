@@ -27,119 +27,49 @@ body::before {
 
 .mainBox {
     margin: 5rem auto;
-    max-width: 50rem;
+    max-width: 25rem;
     min-width: auto;
-    height: 50rem;
+    height: 23.3rem;
     border-radius: 20px;
     background-color: aliceblue;
 }
+.pokemon_container{
+    min-height: 170px;
+    padding-top: 10px;
+}
 
 .poke_stats {
-    max-width: 100%;
-    max-height: 23rem;
-    margin: 60px auto;
-    padding: 10px;
+    margin-top: 3rem;
+    padding: 50px;
+    border-radius: 0px 0px 20px 20px;
     background-color: rgb(115, 215, 215);
     box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.poke_stats li{
-    transform: translate(-1.1rem, 0px);
-    max-width: 500px;
-    margin: 10px auto;
-}
-
-.bar {
-    background: #353b48;    
-    display: block;
-    height: 20px;
-    border: 1px solid rgba(0, 0, 0, .3);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all .3s cubic-bezier(.25, .8, .25, 1);
-}
-
-.bar span{
-    height: 20px;
-    float: left;
-    background: #185beb;
-}
-
 .HP{
     width: 30%;
-    animation: HP .5s; 
 }   
 .Attack{
     width: 40%;
-    animation: Attack .5s; 
 }
 .Defense{
     width: 50%;
-    animation: Defense .5s; 
 }
 .Sp_Atk{
     width: 60%;
-    animation: Sp_Atk .5s; 
 }
 .Sp_Def{
     width: 70%;
-    animation: Sp_Def .5s; 
 }
 .Speed{
     width: 90%;
-    animation: Speed .5s; 
-}
-
-@keyframes HP{
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 30%;
-    }
-}
-@keyframes Attack{
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 40%;
-    }
-}
-@keyframes Defense{
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 50%;
-    }
-}
-@keyframes Sp_Atk{
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 60%;
-    }
-}
-@keyframes Sp_Def{
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 70%;
-    }
-}
-@keyframes Speed{
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 90%;
-    }
 }
 
 .bug{
     background-color: antiquewhite;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
 }
