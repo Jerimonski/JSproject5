@@ -17,41 +17,134 @@ body::before {
     background-size: cover;
     z-index: -1;
 }
-
-.mainBox {
+.form{
+    text-align: center;
+    padding: 0 0 0 80px;
+}
+.search{
+    flex-wrap: wrap;
     margin: auto;
+    margin-left: 80px;
+}
+.btn{
+    border-radius: 5px;
+}
+.mainBox {
     max-width: 25rem;
-    min-width: auto;
     height: 23.3rem;
     border-radius: 20px;
+    margin: auto;
     background-color: aliceblue;
 }
+
 .pokemon_container{
-    min-height: 170px;
-    padding-top: 10px;
+    height: 200px;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.poke_img{
+    width: 8rem;
+    height: 8rem;
 }
 
 .poke_stats {
+    margin-top: 10px;
+    padding: 30px 0;
     display: flex;
     justify-content: center;
-    padding: 50px;
     border-radius: 0px 0px 20px 20px;
     background-color: rgb(115, 215, 215);
     box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 tr > th, td{
-    background-color: rgb(255, 255, 255);
     width: 5.2rem;
     text-align: center;
     font-weight: bold;
+    background-color: rgb(255, 255, 255);
 }
 
-.bug{
+.types{
+    margin: 5px;
+    padding: 2px 6px;
+    border-radius: 2px;
+    border: 1px solid #000000;
     background-color: antiquewhite;
 }
 
-.img{
-    display: flex;
-    justify-content: center;
+.normal {
+    background-color: #b7b7aa;
 }
+
+.fire {
+    background-color: #ff6f52;
+}
+
+.water {
+    background-color: #42a1ff;
+}
+
+.electric {
+    background-color: #fecc33;
+}
+
+.grass {
+    background-color: #78cc55;
+}
+
+.ice {
+    background-color: #66ccfe;
+}
+
+.fighting {
+    background-color: #d3887e;
+}
+
+.poison {
+    background-color: #c68bb7;
+}
+
+.ground {
+    background-color: #dfba52;
+}
+
+.flying {
+    background-color: #8899ff;
+}
+
+.psychic {
+    background-color: #ff66a3;
+}
+
+.bug {
+    background-color: #aabb23;
+}
+
+.rock {
+    background-color: #baaa66;
+}
+
+.ghost {
+    background-color: #9995d0;
+}
+
+.dragon {
+    background-color: #9e93f1;
+}
+
+.dark {
+    background-color: #b59682;
+}
+
+.steel {
+    background-color: #abaabb;
+}
+
+.fairy {
+    background-color: #ed99ed;
+}
+
