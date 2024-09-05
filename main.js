@@ -23,6 +23,7 @@ const ShowData = (data) => {
         </div>
         ${data.types.map(obj => `<span class="${obj.type.name}">${obj.type.name}</span>`).join(' ')}
     `);
+    // append stats to table_stats rows
     let PokemonStats = document.createRange().createContextualFragment(`
         ${data.stats.map(obj => `<span class="stats ${obj.base_stat}">${obj.base_stat}</span>`).join(' ')}
     `);
